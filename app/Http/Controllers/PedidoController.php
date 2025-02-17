@@ -150,6 +150,7 @@ class PedidoController extends Controller
 
     public function reporte(Request $request)
     {
+        set_time_limit(120); // 2 minutos
         $type = $request->input('type', 'json');
 
 
