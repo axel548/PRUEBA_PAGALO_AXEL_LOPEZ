@@ -37,4 +37,19 @@ class Pedido extends Model
     {
         return $this->belongsTo(Cliente::class);
     }
+
+    public function productos()
+    {
+        return $this->hasMany(ProductoPedido::class, 'pedido_id', 'id');
+    }
+
+    public function totalCantidad()
+    {
+        return $this->productos()->sum('cantidad');
+    }
+
+    public function totalDescuento()
+    {
+        return $this->productos()->sum('descuento');
+    }
 }

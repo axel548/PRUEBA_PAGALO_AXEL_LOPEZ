@@ -18,4 +18,5 @@ Route::prefix('pedidos')->middleware('auth:api')->group(function () {
     Route::post('/cancel', [PedidoController::class, 'cancel']);
     Route::patch('/update', [PedidoController::class, 'update']);
     Route::get('/filter', [PedidoController::class, 'filter']);
+    Route::get('/report', [PedidoController::class, 'reporte']);
 });

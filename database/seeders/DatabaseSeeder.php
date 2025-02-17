@@ -20,11 +20,20 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-        Cliente::factory(50)->create();
-        Producto::factory(100)->create();
+        Cliente::factory(5000)->create();
+        Producto::factory(500)->create();
 
+        $this->createPedidos(500);
 
-        $clientes = Cliente::inRandomOrder()->limit(rand(15, 35))->get();
+        // aproximadamente 30 min de espera para generar 250,000 pedidos
+        // for ($i=0; $i < 100; $i++) {
+        //     $this->createPedidos(2500);
+        // }
+
+    }
+
+    private function createPedidos($cantidad_pedidos_generar = 2500) {
+        $clientes = Cliente::inRandomOrder()->limit($cantidad_pedidos_generar)->get();
 
         foreach ($clientes as $cliente) {
             $estado = collect(["pendiente", "procesando", "completado", "cancelado"])->random();
@@ -76,6 +85,5 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
         }
-
     }
 }
