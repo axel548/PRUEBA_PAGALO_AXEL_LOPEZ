@@ -1,0 +1,1462 @@
+{
+	"info": {
+		"_postman_id": "0387ad56-f22e-4abe-9aa8-372c1ff57255",
+		"name": "api_ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10653114"
+	},
+	"item": [
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/api/pedidos?page=1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/api/pedidos?page=1",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Feb 2025 03:43:21 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Feb 2025 03:43:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6InVEZ1BGdjZyWlB1a0RtNFlMWlNJaGc9PSIsInZhbHVlIjoidjE4OHN4U2RxM1dkVEcrVFp2SW9lTzJad3hCamNIR1k2WnpsVTc4SzdTb2QvMjBBeGlKZC84Y2psVHRxVzRrQWtBaEhIYU1sWWlvMFozY1pDbEhjeW9URXJibTU2eGtZd1pOdE9ZQ2pLdU1DTVQyN2ZpUmFkMk1QVE9DbzF3eUciLCJtYWMiOiIxNzYwNGNjOWZhYzQwOTc4ZTg0ZDczMmNkNTI5NGIzMzA1ZTRhYjlhNzQzODBkMGQ3ZTAxMWEzYzc0ZWUxNjA4IiwidGFnIjoiIn0%3D; expires=Sat, 15 Feb 2025 05:43:21 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"cliente_id\": 22,\n            \"metodo_de_pago\": \"criptomoneda\",\n            \"total\": \"12068.69\",\n            \"estado\": \"procesando\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"cliente_id\": 47,\n            \"metodo_de_pago\": \"criptomoneda\",\n            \"total\": \"6350.71\",\n            \"estado\": \"procesando\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"cliente_id\": 16,\n            \"metodo_de_pago\": \"efectivo\",\n            \"total\": \"23126.24\",\n            \"estado\": \"procesando\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"cliente_id\": 25,\n            \"metodo_de_pago\": \"efectivo\",\n            \"total\": \"7344.50\",\n            \"estado\": \"pendiente\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"cliente_id\": 45,\n            \"metodo_de_pago\": \"efectivo\",\n            \"total\": \"42845.04\",\n            \"estado\": \"procesando\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"cliente_id\": 3,\n            \"metodo_de_pago\": \"PayPal\",\n            \"total\": \"28105.02\",\n            \"estado\": \"pendiente\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"cliente_id\": 9,\n            \"metodo_de_pago\": \"Google Pay\",\n            \"total\": \"7460.16\",\n            \"estado\": \"cancelado\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"cliente_id\": 27,\n            \"metodo_de_pago\": \"efectivo\",\n            \"total\": \"23071.73\",\n            \"estado\": \"cancelado\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"cliente_id\": 29,\n            \"metodo_de_pago\": \"Google Pay\",\n            \"total\": \"18156.95\",\n            \"estado\": \"cancelado\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"cliente_id\": 19,\n            \"metodo_de_pago\": \"efectivo\",\n            \"total\": \"23927.38\",\n            \"estado\": \"procesando\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"cliente_id\": 43,\n            \"metodo_de_pago\": \"Google Pay\",\n            \"total\": \"32000.18\",\n            \"estado\": \"completado\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 12,\n            \"cliente_id\": 14,\n            \"metodo_de_pago\": \"Apple Pay\",\n            \"total\": \"33793.90\",\n            \"estado\": \"cancelado\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 13,\n            \"cliente_id\": 7,\n            \"metodo_de_pago\": \"Google Pay\",\n            \"total\": \"45779.05\",\n            \"estado\": \"procesando\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 14,\n            \"cliente_id\": 49,\n            \"metodo_de_pago\": \"efectivo\",\n            \"total\": \"41210.66\",\n            \"estado\": \"cancelado\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        },\n        {\n            \"id\": 15,\n            \"cliente_id\": 28,\n            \"metodo_de_pago\": \"transferencia bancaria\",\n            \"total\": \"35749.66\",\n            \"estado\": \"cancelado\",\n            \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        }\n    ],\n    \"first_page_url\": \"http://127.0.0.1:8000/api/pedidos?page=1\",\n    \"from\": 1,\n    \"last_page\": 3,\n    \"last_page_url\": \"http://127.0.0.1:8000/api/pedidos?page=3\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"&laquo; Previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/pedidos?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/pedidos?page=2\",\n            \"label\": \"2\",\n            \"active\": false\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/pedidos?page=3\",\n            \"label\": \"3\",\n            \"active\": false\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/pedidos?page=2\",\n            \"label\": \"Next &raquo;\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": \"http://127.0.0.1:8000/api/pedidos?page=2\",\n    \"path\": \"http://127.0.0.1:8000/api/pedidos\",\n    \"per_page\": 15,\n    \"prev_page_url\": null,\n    \"to\": 15,\n    \"total\": 35\n}"
+						}
+					]
+				},
+				{
+					"name": "Filter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/api/pedidos/filter?fecha=2025-02-18&estado=cancelado",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "2025-02-18"
+								},
+								{
+									"key": "estado",
+									"value": "procesando",
+									"disabled": true
+								},
+								{
+									"key": "estado",
+									"value": "cancelado"
+								},
+								{
+									"key": "cliente_id",
+									"value": "22",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/api/pedidos/filter?fecha=2025-02-18&estado=procesando&cliente_id=22",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos",
+										"filter"
+									],
+									"query": [
+										{
+											"key": "fecha",
+											"value": "2025-02-18"
+										},
+										{
+											"key": "estado",
+											"value": "procesando"
+										},
+										{
+											"key": "estado",
+											"value": "cancelado",
+											"disabled": true
+										},
+										{
+											"key": "cliente_id",
+											"value": "22"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Feb 2025 03:57:25 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Feb 2025 03:57:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6IlZDdjRUbE1aczZaNGxucDlIbitFd2c9PSIsInZhbHVlIjoiNXpIcnZGeVUrblJjYW5VOU94STVRWDJCWFJLd085YXJUWHdTb29RSVdCRkJlTGlFdUg1UGVmS2hOQTkrcTZzd01idnR3WW1QaHZlT0txNHBKemhOaHhqQUFES1dwOGEwU3A0cmhsVjVJWXFUTDFPVlBXeVBabHZsWHdZR0pPZ2oiLCJtYWMiOiJmY2IzNGYxZWQyYWVkZWExZWNjMGI0NDMwOTViNzQ1NjliYjc2MTE0ODg0YTA1ODM4M2IyMmM4YjgzZWRjYzYzIiwidGFnIjoiIn0%3D; expires=Sat, 15 Feb 2025 05:57:25 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"cliente_id\": 22,\n            \"metodo_de_pago\": \"criptomoneda\",\n            \"total\": \"12068.69\",\n            \"estado\": \"procesando\",\n            \"created_at\": \"2025-02-18T03:04:16.000000Z\",\n            \"updated_at\": \"2025-02-15T03:04:16.000000Z\"\n        }\n    ],\n    \"first_page_url\": \"http://127.0.0.1:8000/api/pedidos/filter?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"http://127.0.0.1:8000/api/pedidos/filter?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"&laquo; Previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"http://127.0.0.1:8000/api/pedidos/filter?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"Next &raquo;\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http://127.0.0.1:8000/api/pedidos/filter\",\n    \"per_page\": 15,\n    \"prev_page_url\": null,\n    \"to\": 1,\n    \"total\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cliente_id\": 1,\r\n    \"metodo_de_pago\": \"tarjeta\",\r\n    \"total\": 23830.64,\r\n    \"estado\": \"pendiente\",\r\n    \"productos\": [\r\n        {\r\n            \"id\": 4,\r\n            \"precio\": 803.92,\r\n            \"cantidad\": 2,\r\n            \"descuento\": 100\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"precio\": 8107.60,\r\n            \"cantidad\": 3,\r\n            \"descuento\": 2000\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/api/pedidos",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Store",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cliente_id\": 1,\r\n    \"metodo_de_pago\": \"tarjeta\",\r\n    \"total\": 23830.64,\r\n    \"estado\": \"pendiente\",\r\n    \"productos\": [\r\n        {\r\n            \"id\": 4,\r\n            \"precio\": 803.92,\r\n            \"cantidad\": 2,\r\n            \"descuento\": 100\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"precio\": 8107.60,\r\n            \"cantidad\": 3,\r\n            \"descuento\": 2000\r\n        }\r\n    ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/api/pedidos",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Feb 2025 09:35:47 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 16 Feb 2025 09:35:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6Im5WbzhVRXlSb3BMdWI5Z0owQ1I1SVE9PSIsInZhbHVlIjoiYU8xNWpuVnV1S29OVnJLUURQZGdlV09JV3lpVENOWUcrV0Q0MEtjRzRXZGM3ak9GY014amRZa05wVkZLVkN2RlNUUHVaTCtkN2lWQ3UyU21aYXRQU1lqTFFjYmFydzFkLytjcEdTOW9ubzRKa21WQ2ZXL1AxL2s5NlFPelJ4NGMiLCJtYWMiOiI5MTRhYjI5NDNlMGIwMzY4ZTZhMjE0MzcyZGY3NWRjOTdiZjVmMDk2ZjkzNzgzZDIwNWJmNDM0YjBlNmVhNjRmIiwidGFnIjoiIn0%3D; expires=Sun, 16 Feb 2025 11:35:47 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"pedido\": {\n        \"cliente_id\": 1,\n        \"metodo_de_pago\": \"tarjeta\",\n        \"total\": \"23830.64\",\n        \"estado\": \"pendiente\",\n        \"updated_at\": \"2025-02-16T09:35:46.000000Z\",\n        \"created_at\": \"2025-02-16T09:35:46.000000Z\",\n        \"id\": 40\n    },\n    \"status\": 201\n}"
+						}
+					]
+				},
+				{
+					"name": "Cancel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/api/pedidos/cancel",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos",
+								"cancel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cancel - Pedido con estado invalido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "29",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/api/pedidos/cancel",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos",
+										"cancel"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Feb 2025 04:11:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Feb 2025 04:11:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6IlJXbERtYjk3aFRZWnNha1JTeDB1bXc9PSIsInZhbHVlIjoiOHR1V2NqdlpJaWNsWTFZZG52VldEWmdwMjBvUjNmdW9TMVdTcDh1TlliOVBBUzFQYjd0ajVTRExuVDJJZ3lUcStyOFZvTGkrbW1VM1MzcE0rQnhSeXh6V3hiTFE1aTRJdDlhV0lodlVjSi9vOXFKSXVwVzFsUEFjOTZtQmtRSmciLCJtYWMiOiIxZDlkMjM3YTFkMGRlNGUyOWYyZTQ0MTQ3ZWFlOGQwNTEzM2JmMTA3NzdlNmNmNTYwM2M0NjRmYWMxNDcxMDU1IiwidGFnIjoiIn0%3D; expires=Sat, 15 Feb 2025 06:11:14 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No puedes cancelar un pedido con el estado: procesando.\"\n}"
+						},
+						{
+							"name": "Cancel - Pedido con estado valido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/api/pedidos/cancel",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos",
+										"cancel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Feb 2025 04:12:07 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Feb 2025 04:12:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6IkY3SHorNnN6MDdUeFZ1eVg5cSsvUUE9PSIsInZhbHVlIjoiRU5nOExiUUVxM0E5YWdxYXpqVlg5alFVZ3pRcmpDTUJiTGtwSEg1elRXQ1hhVXY1NjA2TEJmVVZwVnowRXo1YnUvRXB2bXEzVXJ1d1YyQjRCY091SUtQOWFkb2xwaFZ2Q3V3b0pNNEVEU2RmLzgxZDE1WWlmT0xvTkh3QytlT3MiLCJtYWMiOiI2Njc3ZjhmMWQwMzQyNmQ5YjNkNmFiMmU4NjNjNDBmZDY5ZmZmNzhmZjJmNzJiZTk2NTE1NmRiMjBhZDgzZTFkIiwidGFnIjoiIn0%3D; expires=Sat, 15 Feb 2025 06:12:07 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Pedido cancelado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "pendiente",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/api/pedidos/update",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update - Cambio de estado invalido con pedido completado o cancelado",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "pendiente",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/api/pedidos/update",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 00:21:32 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 00:21:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6IkVQQVQ0SlVBNUVNa1hMRmphVzBIeVE9PSIsInZhbHVlIjoiZzJBZ3FWcFQ5ZUVnUHV5YWlHK3M0MzFxMVNmb0dBVCthNHlvQWx0L1FKMlF1eGpwWTlKTTR1VUUxeXlhL0xDU0wvU3pVVE00WjVxSDhqNHhCbnA5eUhnZldCbzlETTRUaFhKd1k0bVF0elBrSkY4UHZWL1BZRm5DQzAzK1Z3WUMiLCJtYWMiOiJkZmRkZWRlNTY2ZmI0ZDYyOTdkOWIzYTllNjFiNjdhM2IzMzM0NDIwZGUzMGIxNjFiMTgxMTk0NDk0NjU2NjQzIiwidGFnIjoiIn0%3D; expires=Mon, 17 Feb 2025 02:21:32 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"No se puede cambiar el estado de un pedido ya completado o cancelado.\"\n}"
+						},
+						{
+							"name": "Update - Estado invalido",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "6",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "cdsfvfdvvdfv",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/api/pedidos/update",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos",
+										"update"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 00:24:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 00:24:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6ImxpY1p1a1FrSFZpcTZDSkJBTUwvemc9PSIsInZhbHVlIjoicVV1cUxsUVdETDBQVmlab1dsSmQzeWZDa1RXT1B6VG8rUHZhY1RreVBGZUhpMHJ4UHlKYi9UL1BpbGJMbmxQeFRnQnE2bW42RmRnYmtFRmhnNjFqcmZ4K2FuMWx5NXh3TmtjNWN5MTR0OCsxMTVmQ090Z0JDZ21lRUpIaGRranciLCJtYWMiOiJhMjMwYTc0MjFjODU0N2I2MzYwOTdlMjY3NzJkNDM5NmMwNDc3ZGNjYzNkODU1MGY2MTNiMjkyYmZlMTFjZjkwIiwidGFnIjoiIn0%3D; expires=Mon, 17 Feb 2025 02:24:18 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Estado no válido\"\n}"
+						},
+						{
+							"name": "Update - Pedido actualizado",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "estado",
+											"value": "procesando",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/api/pedidos/update",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 00:25:30 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 00:25:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6ImlBQ3hRRG1IZFB1cnJodFkybDU0WXc9PSIsInZhbHVlIjoidkUyaXIzc0Zoek1CNjU0MzRoUjcyY1dOaWVZN3Evc0xTb1pDak83NVdUTHpTZzZTc01yS0tDMUY3SXE3WHIyTUlaRkJBTVN6eWlucW84RHJhOTNUaG5KMEZ1S09DUm5FMnZrdkxRcWJ1VkpSUkdKaktQbHNxQlQvS0Z4bEJtMkIiLCJtYWMiOiI4OGVlYTBhMzlmYTQ3NzJiMjczZjlmM2VlYWQ4N2Q0ZTNmNGYyYjYxNDY5MTMzMmI2ODFlYWQ2OTUzZDNhY2RlIiwidGFnIjoiIn0%3D; expires=Mon, 17 Feb 2025 02:25:30 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Estado actualizado con éxito.\",\n    \"pedido\": {\n        \"id\": 4,\n        \"cliente_id\": 25,\n        \"metodo_de_pago\": \"efectivo\",\n        \"total\": \"7344.50\",\n        \"estado\": \"procesando\",\n        \"created_at\": \"2025-02-15T03:04:16.000000Z\",\n        \"updated_at\": \"2025-02-17T00:25:30.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Verifica que la respuesta contenga el token\r",
+									"if (pm.response.code === 200) {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    if (jsonData.token) {\r",
+									"        // Guarda el token en una variable global\r",
+									"        pm.environment.set(\"jwt_token\", jsonData.token);\r",
+									"        console.log(\"Token JWT guardado:\", jsonData.token);\r",
+									"    } else {\r",
+									"        console.log(\"No se encontró el token en la respuesta.\");\r",
+									"    }\r",
+									"} else {\r",
+									"    console.log(\"Error en la petición, código de respuesta:\", pm.response.code);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "axel.aatl@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "oT@Ei2^zoTa66*wMaG",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/api/login",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "axel.aatl@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "oT@Ei2^zoTa66*wMaG",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/api/login",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Feb 2025 04:13:03 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Feb 2025 04:13:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6ImgvWmliaUFhMmgrQitYUFlBTG56MVE9PSIsInZhbHVlIjoiNHBONElLb1I3YWlORjZpNENqMHVJYTlhR0k3dGRRa3lsYVptZzhkaHhqVEQ3NFYxTDJodmU1RGxCWlpRYURuejVTdHdLNnFWcTZWMWxkaEI3SjVmS0c0VmpGcFZudGd3elpEaGJtMDhHcWltUVhSWStxSzVxL3gvT0JtdXVZZk4iLCJtYWMiOiIzOTFjNThkYjNlNjk5ODM1MjM2ODNlOGY0ODkzYjJmMzNkNzU0ODhlYjY4OWU3N2I0MjIxNjc4YjNhOWJlYTg0IiwidGFnIjoiIn0%3D; expires=Fri, 14 Feb 2025 06:13:03 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzM5NTA2MzgzLCJleHAiOjE3Mzk1MDk5ODMsIm5iZiI6MTczOTUwNjM4MywianRpIjoiMFZxYjQ3N3BaeUd3R0lQOCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.l9j6G01B-4-g4HdIEBMrcHSrmevxfO3uqbdFIGqkM3s\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/api/logout",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/api/logout",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Feb 2025 04:12:18 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Feb 2025 04:12:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6Ik9vNUR0WjZVcGRyYmloeVVtY0hyc1E9PSIsInZhbHVlIjoib0p5RzZreVJyaXNPZk1KSGVLWGpKOUhTVFRqVkFBbjZaUlRGdnQ1QS9CQTRWZ1RIbld5bmhkTmNTUVlPWS9jK0NvV0NQZ0ZzWk0yYlo3RzljbElZRitrU3NVd3hab3VSbDF2Rlk5TEttQVRON0lZc01YS200QXBaTlhUUUFwUG4iLCJtYWMiOiI2ZTdlZDkxYzhmMWRhYjBiODM4OGIzM2U5MTUwMmIwOTJjOTk4NWVhNjE2NTBhZjRiNTY0Y2MyMTg5YjAyNTdiIiwidGFnIjoiIn0%3D; expires=Fri, 14 Feb 2025 06:12:18 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Sesión cerrada correctamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Verifica que la respuesta contenga el token\r",
+									"if (pm.response.code === 200) {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    \r",
+									"    if (jsonData.token) {\r",
+									"        // Guarda el token en una variable global\r",
+									"        pm.environment.set(\"jwt_token\", jsonData.token);\r",
+									"        console.log(\"Token JWT guardado:\", jsonData.token);\r",
+									"    } else {\r",
+									"        console.log(\"No se encontró el token en la respuesta.\");\r",
+									"    }\r",
+									"} else {\r",
+									"    console.log(\"Error en la petición, código de respuesta:\", pm.response.code);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "axel",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "axel.aatl@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "oT@Ei2^zoTa66*wMaG",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url_base}}/api/register",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "axel",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "axel.aatl@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "oT@Ei2^zoTa66*wMaG",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url_base}}/api/register",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Feb 2025 04:11:57 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Feb 2025 04:11:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6IjJSVHhzTlhFclFGTm0wbnB4eWlzRFE9PSIsInZhbHVlIjoiOFFyQ0l3TTh6Lys0VExoZTBCeGplMXZncVhTV2tSaFhQM01laloyN0w3MVpvSG1IWWgrRWxEY1NpbnBkRnJ2QjBNVkk2dG14bzBadmVqZjNKUHl4MSs0bGJJc0NyV0pCeHJZWlBzb0FTNTNtaW82SGh2STB3N2cveWtacnRnU20iLCJtYWMiOiI0NmQ2NmQ0ZTRjMTQ4MDlkYzYyNmE0Nzc3YmRmZDEyMzJkY2ZmM2I3MzVmYmI3MjliNDIyMmY1Yjk2YzQ4Y2VlIiwidGFnIjoiIn0%3D; expires=Fri, 14 Feb 2025 06:11:57 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Usuario registrado correctamente\",\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzM5NTA2MzE3LCJleHAiOjE3Mzk1MDk5MTcsIm5iZiI6MTczOTUwNjMxNywianRpIjoiYXZqSE1KQUJ5SXp0UWJjSiIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.tLg9VnXm9oKdYm3Vrf3ArUVRnHpo0Bbs28RQ-rfGkYs\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/api/me",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/api/me",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Feb 2025 04:14:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Feb 2025 04:14:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6IjMzd3NjYTNpcHJ1MjdPK0hYOGgrQ0E9PSIsInZhbHVlIjoiaTdTdzNSZFFLczRsT3BEVXRrYzdxUWN3TTlLZVhvaDcxa2FESHMraW01WElUWFZSUG5uUTRwa2NDQkVueE1xaG1ZRVdWSlRzV3JBaGFJLy9UckMydGIzcml0aW1vT0k2NzdGWHFOaERCRjBiRCtmR0lHa2pwakM5dGdOZ0NoWnkiLCJtYWMiOiIxNGQ4Mjg0ZWY2MzI1ZGM0YWI2YzFlNGExNjM0MWRhZjM3N2I2YjFlNmE2MDFkNzYzYTlkMmM2MTZmMGM2OGZlIiwidGFnIjoiIn0%3D; expires=Fri, 14 Feb 2025 06:14:11 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"name\": \"axel\",\n    \"email\": \"axel.aatl@gmail.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2025-02-14T04:11:57.000000Z\",\n    \"updated_at\": \"2025-02-14T04:11:57.000000Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reporte",
+			"item": [
+				{
+					"name": "Pedidos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{url_base}}/api/pedidos/report?estado=procesando&type=excel&paginate=100",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"api",
+								"pedidos",
+								"report"
+							],
+							"query": [
+								{
+									"key": "estado",
+									"value": "procesando"
+								},
+								{
+									"key": "type",
+									"value": "excel"
+								},
+								{
+									"key": "paginate",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error al generar reporte",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_base}}/api/pedidos/report",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos",
+										"report"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 05:11:15 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 05:11:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6Imxjd2hlMC9reXhMb0hZaFBGc3lGMnc9PSIsInZhbHVlIjoieGNvVm5oTjdkUS9wRi8vN20wYVVHblY0amNsT0dacmJOTFkyWmQ1WVBRcWRwMHAvNExFU2RuR0RFVlAvekRmYXd3bFd3OW5XdURaL0lJc2JBM1I5Sjk3ditEWEFWMmFNQ3lhZFdGREJZTHNpRjNac0oyb2JqMTJDdU5xNzl6ajkiLCJtYWMiOiIzZTViMTQxNmZhZGY0M2M3ZDViNTA3OGNmOTU3Yzk5ZWNiMTI5ZWY0ZjBkNGQzYWE0Nzg3ZWM1ODcxZmMyYjhiIiwidGFnIjoiIn0%3D; expires=Mon, 17 Feb 2025 07:11:15 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Error al generar el reporte\",\n    \"error\": \"No se pudo guardar el archivo en: reports/reporte_pedidos_20250217_051115.xlsx\"\n}"
+						},
+						{
+							"name": "Reporte generado",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{url_base}}/api/pedidos/report",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"api",
+										"pedidos",
+										"report"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 05:12:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 17 Feb 2025 05:12:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "laravel_session=eyJpdiI6IjhPVk9oeU1EL2VsQk0xd3dPOUhjL1E9PSIsInZhbHVlIjoiaFJnSDF1aVYrZXVURmN4Sms2aENmMzJxWG9EM3hyL20rZHZpVDYxS3YvM0Znc1hPTjJVMDN4OWNJWEFqaWxKdXRhVXhOMU41dkxONXExUnJ4VVU4M0J6RGFUZzFGVk9mcUhxTjllWFBydjF3OVY5QWFxNFd6UW9QVnZhandEQkkiLCJtYWMiOiJhOTc2MGFmNTc5OTRkYTM5NmJmOTMxNTc2Y2VmNmEyYjE2MWY0ZDlhY2I1ZWMzZjljN2Y2OTU0MDcwZDU0ZTViIiwidGFnIjoiIn0%3D; expires=Mon, 17 Feb 2025 07:12:11 GMT; Max-Age=7200; path=/; httponly; samesite=lax"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Reporte generado correctamente\",\n    \"file_path\": \"reports/reporte_pedidos_20250217_051211.xlsx\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
