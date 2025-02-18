@@ -17,14 +17,14 @@
 
    ```bash
    git clone https://github.com/axel548/PRUEBA_PAGALO_AXEL_LOPEZ.git
-   cd .\PRUEBA_PAGALO_AXEL_LOPEZ\
+   cd .\PRUEBA_PAGALO_AXEL_LOPEZ\ && mkdir storage\app\reports
    ```
    
 2. Limpiar y preparar el caché:
 
    ```bash
    composer clear-cache
-   composer install
+   composer install && composer require phpoffice/phpspreadsheet
    composer dump-autoload
    ```
    
@@ -70,12 +70,7 @@
     php artisan migrate --seed
    ```
 
-7. Crear la carpeta reports en storage/app:
-   ```bash
-    mkdir storage\app\reports
-   ```
-
-8. Ejecutar el servidor:
+7. Ejecutar el servidor:
    ```bash
     php artisan serve
    ```
