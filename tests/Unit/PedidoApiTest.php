@@ -92,8 +92,6 @@ class PedidoApiTest extends TestCase
     /** @test */
     public function it_can_list_pedidos()
     {
-        Pedido::factory()->count(5)->create(); // Crea pedidos de prueba
-
         $response = $this->actingAs($this->user, 'api')->getJson('/api/pedidos');
 
         $response->assertStatus(200)
@@ -118,11 +116,24 @@ class PedidoApiTest extends TestCase
     }
 
     /** @test */
+    public function it_can_cancel_pedido()
+    {
+        $pedidoData = [
+            'id' => Pedido::where('estado', 'pendiente')->inRandomOrder()->first()->id,
+        ];
+
+        $response = $this->actingAs($this->user, 'api')->postJson('/api/pedidos/cancel', $pedidoData);
+
+        $response->assertStatus(200)
+            ->assertJsonStructure([
+                'message'
+            ]);
+    }
+
+    /** @test */
     public function it_can_create_a_pedido_with_productos()
     {
-        // Datos de prueba
-        $productos = Producto::factory()->count(3)->create();
-
+        $productos = Producto::inRandomOrder()->limit(rand(1, 5))->get();
 
         $pedidoData = [
             'cliente_id' => Cliente::inRandomOrder()->first()->id,
@@ -148,5 +159,16 @@ class PedidoApiTest extends TestCase
                      'pedido' => ['id', 'cliente_id', 'total', 'estado', 'created_at'],
                      'status'
                  ]);
+    }
+
+    /** @test */
+    public function it_can_generate_report()
+    {
+        $response = $this->actingAs($this->user, 'api')->getJson('/api/pedidos/report?estado=procesando&type=excel&paginate=100');
+
+        $response->assertStatus(200)
+            ->assertJsonStructure([
+                "success","message", "file_path"
+            ]);
     }
 }
